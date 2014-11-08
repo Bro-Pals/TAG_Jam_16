@@ -19,12 +19,17 @@ public class Animation {
 	
 	public void setTrack(int track) {
 		this.track = track;
+		frame = 0;
 	}
 	
 	public void resetAnimation() {
 		frame = 0;
 	}
 	
+	/**
+		Update the animaton.
+		@param milliseconds How many milliseconds go by every frame
+	*/
 	public void updateAnimation(long milliseconds) {
 		progress += milliseconds;
 		if (progress > millisecondsPerFrame) {
