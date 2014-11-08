@@ -46,7 +46,7 @@ public class Entities {
 	public void mapEntity(String parseString) {
 		/*
 			Format:
-			name behavior-class collision-class block-num w h x y w h y w h ... sprite-class
+			name behavior-class collision-class block-num w h x y w h y w h ... animation
 		*/
 		String[] split = parseString.split(" ");
 		String name = split[0];
@@ -81,8 +81,7 @@ public class Entities {
 			System.out.println("Could not instantiate collision component: " + e.toString());
 		}
 		try {
-			Class scc = Class.forName("bropals.tag16.entity." + split[split.length-1]);
-			sc = (SpriteComponent)scc.newInstance();
+			sc = new SpriteComponent();
 		} catch(Exception e) {
 			System.out.println("Could not instantiate sprite component: " + e.toString());
 		}
