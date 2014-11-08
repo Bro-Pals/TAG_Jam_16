@@ -9,7 +9,7 @@ public class ImageInput {
 	
 	private static HashMap<String, BufferedImage> images = new HashMap<>();
 
-	public static void loadImage(String path, String key) {
+	public static BufferedImage loadImage(String path, String key) {
 		BufferedImage image = null;
 		try {
 			File file = new File(path);
@@ -22,6 +22,7 @@ public class ImageInput {
 		} else {
 			System.err.println("Could not find image in " + path);
 		}
+		return image;
 	}
 	
 	public static BufferedImage getImage(String key) {

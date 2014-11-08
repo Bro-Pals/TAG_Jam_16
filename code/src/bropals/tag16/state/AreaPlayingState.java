@@ -29,6 +29,8 @@ public class AreaPlayingState extends GameState {
 			Entity currentEntity = stuff.get(e);
 			currentEntity.getBehavior().update(); // update it
 			
+			currentEntity.getSprite().getAnimation().updateAnimation(50);
+			
 			// collision check with EVERYTING
 			for (int oth=0; oth<stuff.size(); oth++) {
 				if (stuff.get(oth) == stuff.get(e)) {
