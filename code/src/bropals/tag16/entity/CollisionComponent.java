@@ -13,8 +13,16 @@ public class CollisionComponent extends EntityComponent {
 	*/
 	private Rectangle[] boxes;
 	
+	public CollisionComponent() {
+		
+	}
+	
 	public CollisionComponent(Rectangle[] b) {
 		boxes = b;
+	}
+	
+	public void setRectangles(Rectangle[] bs) {
+		boxes = bs;
 	}
 	
 	public CollisionComponent(Rectangle box) {
