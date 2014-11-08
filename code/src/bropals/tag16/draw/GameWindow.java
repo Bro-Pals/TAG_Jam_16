@@ -184,19 +184,19 @@ public class GameWindow {
 		return frame.getInsets().top;
 	}
 	
-	public float mouseXBuffer() {
+	public float getMouseXBuffer() {
 		return mouseXBuffer;
 	}
 	
-	public float mouseYBuffer() {
+	public float getMouseYBuffer() {
 		return mouseYBuffer;
 	}
 	
-	public float mousePositionX() {
+	public float getMousePositionX() {
 		return mousePositionX;
 	}
 	
-	public float mousePositionY() {
+	public float getMousePositionY() {
 		return mousePositionY;
 	}
 }

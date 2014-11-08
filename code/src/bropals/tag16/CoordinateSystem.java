@@ -24,7 +24,7 @@ public class CoordinateSystem {
 		return (GameWindow.getGameWindow().getZoomFactor()*x)-GameWindow.getGameWindow().getCameraX();
 	}
 	
-	public static float worldToCameraX(float y) {
+	public static float worldToCameraY(float y) {
 		return (GameWindow.getGameWindow().getZoomFactor()*y)-GameWindow.getGameWindow().getCameraY();
 	}
 	
@@ -32,7 +32,7 @@ public class CoordinateSystem {
 		return (x-GameWindow.getGameWindow().getCameraX())/GameWindow.getGameWindow().getZoomFactor();
 	}
 	
-	public static float cameraToWorldX(float y) {
+	public static float cameraToWorldY(float y) {
 		return (y-GameWindow.getGameWindow().getCameraY())/GameWindow.getGameWindow().getZoomFactor();
 	}
 }
