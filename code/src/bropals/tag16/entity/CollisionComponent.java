@@ -37,5 +37,5 @@ public class CollisionComponent extends EntityComponent {
 	public Object clone() {
 		return new CollisionComponent(boxes);
 	}
-	
+
 }
