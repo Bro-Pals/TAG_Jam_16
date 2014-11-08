@@ -2,6 +2,7 @@ package bropals.tag16;
 
 import bropals.tag16.state.GameStateRunner;
 import bropals.tag16.draw.GameWindow;
+import bropals.tag16.state.AreaPlayingState;
 
 public class GameMain {
 	
@@ -15,7 +16,7 @@ public class GameMain {
 		//Create the graphics
 		GameWindow.getGameWindow().initGraphics();
 		//Set the game to its initial state 
-		//TO DO
+		GameStateRunner.getGameStateRunner().setGameState(new AreaPlayingState());
 		//Run the game
 		GameStateRunner.getGameStateRunner().loop();
 		System.out.println("Exiting normally");

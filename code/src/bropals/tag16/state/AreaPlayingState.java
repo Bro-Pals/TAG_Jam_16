@@ -1,6 +1,8 @@
 package bropals.tag16.state;
 
 import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import bropals.tag16.entity.PlayerBehaviorComponent;
 import bropals.tag16.entity.CollisionComponent;
@@ -8,23 +10,22 @@ import bropals.tag16.entity.SpriteComponent;
 import bropals.tag16.entity.Entity;
 import java.awt.Rectangle;
 import bropals.tag16.GlobalStuff;
+import bropals.tag16.world.Area;
+import bropals.tag16.io.AreaInputOutput;
+import bropals.tag16.io.ImageInput;
 
 
 public class AreaPlayingState extends GameState {
 	
-	private ArrayList<Entity> stuff;
+	private Area area;
 	
 	public AreaPlayingState() {
-		stuff = new ArrayList<>();
-		SpriteComponent s = new SpriteComponent();
-		// we need to add stuff to the sprite componenet so the player has cool stuff
-		GlobalStuff.setPlayerEntity(new Entity("Player", new PlayerBehaviorComponent(),
-			new CollisionComponent(new Rectangle(0, 0, 80, 100)), s, 50, 50));
+		area = AreaInputOutput.loadArea("areas/level1.data");
 	}
 	
 	@Override
 	public void update() {
-		
+		ArrayList<Entity> stuff = area.getEntities();
 		for (int e=0; e<stuff.size(); e++) {
 			Entity currentEntity = stuff.get(e);
 			currentEntity.getBehavior().update(); // update it
@@ -90,8 +91,8 @@ public class AreaPlayingState extends GameState {
 	
 	@Override
 	public void render(Graphics g) {
-		for (Entity e : stuff) {
-			
+		for (Entity e : area.getEntities()) {
+			e.getSprite().draw((Graphics2D)g);
 		}
 	}
 	

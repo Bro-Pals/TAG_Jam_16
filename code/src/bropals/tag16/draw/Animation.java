@@ -27,7 +27,7 @@ public class Animation {
 	}
 	
 	/**
-		Update the animaton.
+		Update the animation.
 		@param milliseconds How many milliseconds go by every frame
 	*/
 	public void updateAnimation(long milliseconds) {
@@ -39,6 +39,10 @@ public class Animation {
 				frame = 0;
 			}
 		}
+	}
+
+	public BufferedImage getCurrentFrame() {
+		return tracks[track][frame];
 	}
 	
 	@Override
