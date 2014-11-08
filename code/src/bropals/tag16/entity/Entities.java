@@ -35,7 +35,7 @@ public class Entities {
 		Make a parse string based on an Entity
 	*/
 	public String makeEntityParseString(Entity e) {
-		
+		return "" + e.getName() + " " + e.getX() + " " + e.getY();
 	}
 	
 	/**

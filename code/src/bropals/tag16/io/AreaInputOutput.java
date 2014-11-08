@@ -3,6 +3,7 @@ package bropals.tag16.io;
 import java.io.File;
 import java.io.FileReader;
 import java.io.BufferedReader;
+import java.io.PrintStream;
 import bropals.tag16.world.Area;
 import bropals.tag16.entity.Entities;
 
@@ -20,14 +21,14 @@ public class AreaInputOutput {
 			while(currentLine!=null) {
 				String[] split = rdr.readLine();
 				name = split[0];
-				float x=0, float y=0;
+				float x=0, y=0;
 				try {
 					x = Float.parseFloat(split[1]);
 					y = Float.parseFloat(split[2]);
 				} catch(NumberFormatException nfe) {
 					System.out.println("Invalid float value " + nfe.toString());
 				}
-				area.addEntity(Entities.createEntity(name, x, y);
+				area.addEntity(Entities.createEntity(name, x, y));
 				currentLine = rdr.readLine();
 			}
 			rdr.close();
@@ -40,14 +41,15 @@ public class AreaInputOutput {
 	
 	public static void writeArea(String path, Area area) {
 		try {
+			PrintStream pstr = new PrintStream(new File("assets/" + path));
 			ArrayList<Entity> entities = new ArrayList<Entity>();
 			for (Entity e : entities) {
-				
+				pstr.println(Entities.makeEntityParseString(e));
 			}
+			pstr.flush();
+			pstr.close();
 		} catch(Exception e) {
 			System.out.println("Unable to write area " + path + ": " + e.toString());
 		}
 	}
-	
-	public 
 }
