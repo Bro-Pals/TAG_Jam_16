@@ -32,7 +32,7 @@ public class Entity {
 	public Object clone() {
 		return new Entity(name, (BehaviorComponent)behavior.clone(), 
 			(CollisionComponent)collision.clone(),
-			(SpriteComponent)sprite.clone(), x, yd);
+			(SpriteComponent)sprite.clone(), x, y);
 	}
 	
 	public BehaviorComponent getBehavior() {

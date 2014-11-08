@@ -29,6 +29,10 @@ public class CollisionComponent extends EntityComponent {
 		boxes = new Rectangle[]{box};
 	}
 	
+	public Rectangle[] getBoxes() {
+		return boxes;
+	}
+	
 	@Override
 	public Object clone() {
 		return new CollisionComponent(boxes);

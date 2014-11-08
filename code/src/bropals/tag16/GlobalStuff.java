@@ -1,3 +1,6 @@
+package bropals.tag16;
+
+import bropals.tag16.entity.Entity;
 
 public class GlobalStuff {
 	
