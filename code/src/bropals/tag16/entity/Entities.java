@@ -81,7 +81,7 @@ public class Entities {
 			System.out.println("Could not instantiate collision component: " + e.toString());
 		}
 		try {
-			sc = new SpriteComponent();
+			
 		} catch(Exception e) {
 			System.out.println("Could not instantiate sprite component: " + e.toString());
 		}
