@@ -88,7 +88,9 @@ public class AreaPlayingState extends GameState {
 	
 	@Override
 	public void render(Graphics g) {
-		
+		for (Entity e : stuff) {
+			e.getSprite().getAnimation().
+		}
 	}
 	
 }
