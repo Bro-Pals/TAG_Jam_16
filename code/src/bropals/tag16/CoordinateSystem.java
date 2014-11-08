@@ -12,13 +12,27 @@ public class CoordinateSystem {
 		return y-GameWindow.getGameWindow().getInsetY();
 	}
 	
-	public static int screenToBufferX(int x) {
+	public static int screenToCameraX(int x) {
 		return (int)((float)GameWindow.BUFFER_WIDTH/(float)GameWindow.getGameWindow().getScreenWidth());
 	}
 	
-	public static int screenToBufferY(int y) {
+	public static int screenToCameraY(int y) {
 		return (int)((float)GameWindow.BUFFER_HEIGHT/(float)GameWindow.getGameWindow().getScreenHeight());
 	}
 	
+	public static float worldToCameraX(float x) {
+		return (GameWindow.getGameWindow().getZoomFactor()*x)-GameWindow.getGameWindow().getCameraX();
+	}
 	
+	public static float worldToCameraY(float y) {
+		return (GameWindow.getGameWindow().getZoomFactor()*y)-GameWindow.getGameWindow().getCameraY();
+	}
+	
+	public static float cameraToWorldX(float x) {
+		return (x-GameWindow.getGameWindow().getCameraX())/GameWindow.getGameWindow().getZoomFactor();
+	}
+	
+	public static float cameraToWorldY(float y) {
+		return (y-GameWindow.getGameWindow().getCameraY())/GameWindow.getGameWindow().getZoomFactor();
+	}
 }

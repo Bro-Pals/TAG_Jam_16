@@ -45,10 +45,10 @@ public class GameWindow {
 		The input buffers
 	*/
 	private int keyBuffer;
-	private int mouseXBuffer;
-	private int mouseYBuffer;
-	private int mousePositionX;
-	private int mousePositionY;
+	private float mouseXBuffer;
+	private float mouseYBuffer;
+	private float mousePositionX;
+	private float mousePositionY;
 	private boolean keyPressed;
 	private boolean mousePressed;
 	
@@ -198,5 +198,20 @@ public class GameWindow {
 	
 	public static int getKeyPressed() {
 		return keyPressed;
+
+	public float getMouseXBuffer() {
+		return mouseXBuffer;
+	}
+	
+	public float getMouseYBuffer() {
+		return mouseYBuffer;
+	}
+	
+	public float getMousePositionX() {
+		return mousePositionX;
+	}
+	
+	public float getMousePositionY() {
+		return mousePositionY;
 	}
 }
