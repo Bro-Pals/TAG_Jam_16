@@ -18,8 +18,8 @@ public class PlayerBehaviorComponent extends CreatureBehaviorComponent {
 	@Override
 	public void update() {
 		// handle any key presses
-		int keyPressed = GameWindow.getKeyBuffer();
-		boolean keyDown = GameWindow.getKeyPressed();
+		int keyPressed = GameWindow.getGameWindow().getKeyBuffer();
+		boolean keyDown = GameWindow.getGameWindow().getKeyPressed();
 		if (keyPressed != -1) {
 			if (keyPressed == KeyEvent.VK_D) {
 				right = keyDown;

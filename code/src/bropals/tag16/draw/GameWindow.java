@@ -190,14 +190,11 @@ public class GameWindow {
 		@return the key that was pressed. If it's -1 then nothing
 		has recently been pressed.
 	*/
-	public static int getKeyBuffer() {
+	public int getKeyBuffer() {
 		int daKey = keyBuffer;
 		keyBuffer = -1; // reset the buffer
 		return daKey;
 	}
-	
-	public static int getKeyPressed() {
-		return keyPressed;
 
 	public float getMouseXBuffer() {
 		return mouseXBuffer;
@@ -213,5 +210,13 @@ public class GameWindow {
 	
 	public float getMousePositionY() {
 		return mousePositionY;
+	}
+	
+	public boolean getKeyPressed() {
+		return keyPressed;
+	}
+	
+	public boolean getMousePressed() {
+		return mousePressed;
 	}
 }
