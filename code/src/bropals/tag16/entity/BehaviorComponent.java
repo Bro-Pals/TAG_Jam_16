@@ -4,7 +4,7 @@ public class BehaviorComponent extends EntityComponent {
 	
 	private String[] thingsCantCollideWith;
 	
-	public void updateParent() {
+	public void update() {
 		// to override
 	}
 	

@@ -12,23 +12,23 @@ public class GlobalStuff {
 	/**
 		The references to the Player entitiy and the Robot entity
 	*/
-	private Entity playerEntity = null, robotEntity = null;
+	private static Entity playerEntity = null, robotEntity = null;
 	/**
 		A boolean value that says whether or not the player is 
 		in combat. The player is in combat when he is being chased
 		by an enemy or in line of sight of an enemy.
 	*/
-	private boolean inCombat = false;
+	private static boolean inCombat = false;
 	
-	public int getScrapAmount() { return scrapAmount; }
-	public void setScrapAmount(int s) { scrapAmount = s; }
+	public static int getScrapAmount() { return scrapAmount; }
+	public static void setScrapAmount(int s) { scrapAmount = s; }
 	
-	public Entity getPlayerEntity() { return playerEntity; }
-	public void setPlayerEntity(Entity e) { playerEntity = e; }
+	public static Entity getPlayerEntity() { return playerEntity; }
+	public static void setPlayerEntity(Entity e) { playerEntity = e; }
 	
-	public Entity getRobotEntity() { return robotEntity; }
-	public void setRobotEntity(Entity e) { robotEntity = e; }
+	public static Entity getRobotEntity() { return robotEntity; }
+	public static void setRobotEntity(Entity e) { robotEntity = e; }
 	
-	public boolean isInCombat() { return inCombat; }
-	public void setInCombat(boolean c) { inCombat = c; }
+	public static boolean isInCombat() { return inCombat; }
+	public static void setInCombat(boolean c) { inCombat = c; }
 }

@@ -183,4 +183,20 @@ public class GameWindow {
 	public int getInsetY() {
 		return frame.getInsets().top;
 	}
+	
+	/**
+		Get the key that was pressed. After this method
+		is called, the keyBuffer is set back to -1.
+		@return the key that was pressed. If it's -1 then nothing
+		has recently been pressed.
+	*/
+	public static int getKeyBuffer() {
+		int daKey = keyBuffer;
+		keyBuffer = -1; // reset the buffer
+		return daKey;
+	}
+	
+	public static int getKeyPressed() {
+		return keyPressed;
+	}
 }
