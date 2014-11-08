@@ -1,11 +1,13 @@
 package bropals.tag16.io;
 
+import java.util.ArrayList;
 import java.io.File;
 import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.PrintStream;
 import bropals.tag16.world.Area;
 import bropals.tag16.entity.Entities;
+import bropals.tag16.entity.Entity;
 
 public class AreaInputOutput {
 	
@@ -19,8 +21,9 @@ public class AreaInputOutput {
 			BufferedReader rdr = new BufferedReader(new FileReader(new File("assets/" + path)));
 			String currentLine = rdr.readLine();
 			while(currentLine!=null) {
-				String[] split = rdr.readLine();
-				name = split[0];
+				String str = rdr.readLine();
+				String[] split = str.split(" ");
+				String name = split[0];
 				float x=0, y=0;
 				try {
 					x = Float.parseFloat(split[1]);
@@ -28,7 +31,7 @@ public class AreaInputOutput {
 				} catch(NumberFormatException nfe) {
 					System.out.println("Invalid float value " + nfe.toString());
 				}
-				area.addEntity(Entities.createEntity(name, x, y));
+				area.addEntity(Entities.getEntities().createEntity(name, x, y));
 				currentLine = rdr.readLine();
 			}
 			rdr.close();
@@ -44,7 +47,7 @@ public class AreaInputOutput {
 			PrintStream pstr = new PrintStream(new File("assets/" + path));
 			ArrayList<Entity> entities = new ArrayList<Entity>();
 			for (Entity e : entities) {
-				pstr.println(Entities.makeEntityParseString(e));
+				pstr.println(Entities.getEntities().makeEntityParseString(e));
 			}
 			pstr.flush();
 			pstr.close();

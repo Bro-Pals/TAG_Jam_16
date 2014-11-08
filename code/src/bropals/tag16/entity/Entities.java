@@ -87,7 +87,7 @@ public class Entities {
 			System.out.println("Could not instantiate sprite component: " + e.toString());
 		}
 		//Now put it all into an entity and map it
-		Entity e = new Entity(bc, cc, sc, 0, 0);
+		Entity e = new Entity(name, bc, cc, sc, 0, 0);
 		es.put(name, e);
 	}
 }
