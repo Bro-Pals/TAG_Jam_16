@@ -45,10 +45,10 @@ public class GameWindow {
 		The input buffers
 	*/
 	private int keyBuffer;
-	private int mouseXBuffer;
-	private int mouseYBuffer;
-	private int mousePositionX;
-	private int mousePositionY;
+	private float mouseXBuffer;
+	private float mouseYBuffer;
+	private float mousePositionX;
+	private float mousePositionY;
 	private boolean keyPressed;
 	private boolean mousePressed;
 	
@@ -182,5 +182,21 @@ public class GameWindow {
 	
 	public int getInsetY() {
 		return frame.getInsets().top;
+	}
+	
+	public float mouseXBuffer() {
+		return mouseXBuffer;
+	}
+	
+	public float mouseYBuffer() {
+		return mouseYBuffer;
+	}
+	
+	public float mousePositionX() {
+		return mousePositionX;
+	}
+	
+	public float mousePositionY() {
+		return mousePositionY;
 	}
 }
