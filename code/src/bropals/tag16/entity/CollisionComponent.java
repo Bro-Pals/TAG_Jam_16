@@ -13,14 +13,17 @@ public class CollisionComponent extends EntityComponent {
 	*/
 	private Rectangle[] boxes;
 	
-	public CollisionComponent(Entity parent, Rectangle[] b) {
-		super(parent);
+	public CollisionComponent(Rectangle[] b) {
 		boxes = b;
 	}
 	
-	public CollisionComponent(Entity parent, Rectangle box) {
-		super(parent);
+	public CollisionComponent(Rectangle box) {
 		boxes = new Rectangle[]{box};
+	}
+	
+	@Override
+	public Object clone() {
+		return new CollisionComponent(boxes);
 	}
 	
 }

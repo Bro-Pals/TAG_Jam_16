@@ -7,7 +7,7 @@ public abstract class EntityComponent {
 	*/
 	private Entity parent;
 	
-	public EntityComponent(Entity parent) {
+	public void setParent(Entity parent) {
 		this.parent=parent;
 	}
 	

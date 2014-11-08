@@ -2,10 +2,6 @@ package bropals.tag16.entity;
 
 public class BehaviorComponent extends EntityComponent {
 	
-	public BehaviorComponent(Entity parent) {
-		super(parent);
-	}
-	
 	public void updateParent() {
 		// to override
 	}
@@ -21,6 +17,11 @@ public class BehaviorComponent extends EntityComponent {
 	*/
 	public void onCollide(Entity e) {
 		// to override. What happens during collisions
+	}
+	
+	@Override
+	public Object clone() {
+		return new BehaviorComponent();
 	}
 	
 }

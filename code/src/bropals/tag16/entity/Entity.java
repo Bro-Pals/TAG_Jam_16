@@ -10,14 +10,24 @@ public class Entity {
 	
 	public Entity(BehaviorComponent b, CollisionComponent c, SpriteComponent s, float x, float y) {
 		behavior = b;
+		behavior.setParent(this);
 		collision = c;
+		collision.setParent(this);
 		sprite = s;
+		sprite.setParent(this);
 		this.x=x;
 		this.y=y;
 		velX = 0;
 		velY = 0;
 		accX = 0;
 		accY = 0;
+	}
+	
+	@Override
+	public Object clone() {
+		return new Entity((BehaviorComponent)behavior.clone(), 
+			(CollisionComponent)collision.clone(),
+			(SpriteComponent)sprite.clone(), x, yd);
 	}
 	
 	public BehaviorComponent getBehavior() {
