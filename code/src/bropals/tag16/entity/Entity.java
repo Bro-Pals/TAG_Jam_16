@@ -2,13 +2,14 @@ package bropals.tag16.entity;
 
 public class Entity {
 	
+	private String name;
 	private BehaviorComponent behavior;
 	private CollisionComponent collision;
 	private SpriteComponent sprite;
 	
 	private float x, y, velX, velY, accX, accY;
 	
-	public Entity(BehaviorComponent b, CollisionComponent c, SpriteComponent s, float x, float y) {
+	public Entity(String name, BehaviorComponent b, CollisionComponent c, SpriteComponent s, float x, float y) {
 		behavior = b;
 		behavior.setParent(this);
 		collision = c;
@@ -23,9 +24,13 @@ public class Entity {
 		accY = 0;
 	}
 	
+	public String getName() {
+		return name;
+	}
+	
 	@Override
 	public Object clone() {
-		return new Entity((BehaviorComponent)behavior.clone(), 
+		return new Entity(name, (BehaviorComponent)behavior.clone(), 
 			(CollisionComponent)collision.clone(),
 			(SpriteComponent)sprite.clone(), x, yd);
 	}
